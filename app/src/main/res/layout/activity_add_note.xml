@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddNote"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Notes"
+
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:padding="10dp"
+        android:fontFamily="@font/poppins"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:hint="Title"
+
+        android:maxLength="100"
+        android:padding="10dp"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/subTitle"
+        android:hint="Description"
+        android:background="@drawable/edittext_bg"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="10dp"
+        android:padding="10dp"
+        android:maxLength="1000"
+        android:textAlignment="viewStart"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="150dp"
+        android:inputType="text|textMultiLine"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addImage"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        android:layout_margin="5dp"
+        android:text="Add Images from gallery"
+        android:fontFamily="@font/poppins"
+        android:textSize="18dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addImageCamera"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        android:layout_margin="5dp"
+        android:text="Add Images From Camera"
+        android:fontFamily="@font/poppins"
+        android:textSize="18dp"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageRecyclerView"
+        android:layout_margin="5dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Add Note"
+        android:onClick="addNote"
+        android:backgroundTint="@color/teal_700"
+        />
+
+</LinearLayout>
