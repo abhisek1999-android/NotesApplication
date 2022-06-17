@@ -54,6 +54,8 @@
         android:background="@drawable/edittext_bg"
         android:fontFamily="@font/poppins"
         android:padding="10dp"
+        android:maxLength="10"
+        android:inputType="number"
         />
 
     <EditText

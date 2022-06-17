@@ -44,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 new EncryptPassword().decrypt(userList.get(i).pass.toString()).equals(password.getText().toString())){
                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                PrefConfig.writeIdInPref(getApplicationContext(),email.getText().toString(),"id");
+              finish();
                flag=true;
                break;
           }
@@ -52,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         if (!flag)
             Toast.makeText(this, "Id password mismatch", Toast.LENGTH_SHORT).show();
 
-        finish();
+
 
         }
     }

@@ -112,7 +112,7 @@ public class AddNote extends AppCompatActivity {
                 int x= data.getClipData().getItemCount();
                 for(int i=0;i<x;i++){
 
-                    if (imagesList.size()<=10){
+                    if (imagesList.size()<10){
                         imagesList.add(data.getClipData().getItemAt(i).getUri());
                     }
 
@@ -134,7 +134,7 @@ public class AddNote extends AppCompatActivity {
                 if (imageURI != null) {
                     // use the same uri, that you initialized while calling camera intent
                     // do whatever you want to do with this Uri
-                    if (imagesList.size()<=10){
+                    if (imagesList.size()<10){
                     imagesList.add(imageURI);
                     }
 

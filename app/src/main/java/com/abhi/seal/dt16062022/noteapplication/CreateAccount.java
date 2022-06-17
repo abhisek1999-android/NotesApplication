@@ -46,7 +46,7 @@ public class CreateAccount extends AppCompatActivity {
         }
       email=findViewById(R.id.email);
       password=findViewById(R.id.password);
-      name=findViewById(R.id.password);
+      name=findViewById(R.id.name);
       number=findViewById(R.id.phoneNumber);
         if (ContextCompat.checkSelfPermission(CreateAccount.this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED
                 && ContextCompat.checkSelfPermission(CreateAccount.this, Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
@@ -70,7 +70,7 @@ public class CreateAccount extends AppCompatActivity {
     {
 
         // Regex to check valid password.
-        String regex = "^([a-z])"+"(?=(.*\\d){2})"+"(?=.*[a-z])"+"(?=(.*[A-Z]){2})"+ "(?=.*[@#$%^&+=])" + "(?=\\S+$).{7,15}$";
+        String regex = "^([a-z])"+"(?=(.*\\d){2})"+"(?=(.*[A-Z]){2})"+ "(?=.*[@#$%^&+=])" + "(?=\\S+$).{7,15}$";
         Pattern p = Pattern.compile(regex);
 
         if (password == null) {
@@ -92,8 +92,17 @@ public class CreateAccount extends AppCompatActivity {
             return;
         }
 
-        if (!password.getText().toString().contains(name.getText().toString())){
+        if (password.getText().toString().contains(name.getText().toString())){
             password.setError("Password must not contain your name!");
+            return;
+        }
+        if (TextUtils.isEmpty(name.getText().toString())){
+            name.setError("Enter your name!");
+            return;
+        }
+
+        if (TextUtils.isEmpty(number.getText().toString()) ){
+            number.setError("Enter your phone number!");
             return;
         }
 
