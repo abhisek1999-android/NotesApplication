@@ -22,8 +22,11 @@ How this works:
 4. We can see our notes in the home page and by clicking those notes we can see the details of the notes.
 
 Database Schema:
+
  Auth(uid[PK],password)
+ 
  User(id[pk],uid,name,phone,pass)
+ 
  Notes(id[pk],title,user[FK],desc,images)
  
  Here 'uid' of Auth table and 'user' are connected for retriving requied notes for a particular user.
